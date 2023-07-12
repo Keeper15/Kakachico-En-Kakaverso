@@ -229,6 +229,8 @@ GameObject:
   - component: {fileID: 331044899}
   - component: {fileID: 331044898}
   - component: {fileID: 331044903}
+  - component: {fileID: 331044905}
+  - component: {fileID: 331044904}
   m_Layer: 6
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -831,6 +833,129 @@ MonoBehaviour:
   - {fileID: 331044902}
   m_DeadzoneMin: 0.125
   m_DeadzoneMax: 0.925
+--- !u!65 &331044904
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331044896}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.051126994, y: 0.051251624, z: 0.15230738}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &331044905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331044896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55316a2cfbb47349848b355527849ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  webthread: {fileID: 429651674}
+  webtarget: {fileID: 0}
+  websling: {fileID: 1032982988236784937, guid: e9b8723363ba84949a8de8f9e3a86373,
+    type: 3}
+  kakachico: {fileID: 1165312108}
+  webShootSpawn: {fileID: 918177545}
+  isPunchReady: 0
+  inputActionReference_Activate: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  inputActionReference_Select: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  isHoldingSomething: 0
+--- !u!1001 &429651673
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1995680607}
+    m_Modifications:
+    - target: {fileID: 986367519899632707, guid: e146bb2fee695d741af10907624ed26c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 986367519899632707, guid: e146bb2fee695d741af10907624ed26c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.78831625
+      objectReference: {fileID: 0}
+    - target: {fileID: 986367519899632707, guid: e146bb2fee695d741af10907624ed26c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 986367519899632707, guid: e146bb2fee695d741af10907624ed26c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.764348
+      objectReference: {fileID: 0}
+    - target: {fileID: 986367519899632707, guid: e146bb2fee695d741af10907624ed26c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 986367519899632707, guid: e146bb2fee695d741af10907624ed26c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 986367519899632707, guid: e146bb2fee695d741af10907624ed26c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 986367519899632707, guid: e146bb2fee695d741af10907624ed26c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 986367519899632707, guid: e146bb2fee695d741af10907624ed26c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 986367519899632707, guid: e146bb2fee695d741af10907624ed26c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 986367519899632707, guid: e146bb2fee695d741af10907624ed26c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652195397163516056, guid: e146bb2fee695d741af10907624ed26c,
+        type: 3}
+      propertyPath: m_Name
+      value: WebThread (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001778235478424539, guid: e146bb2fee695d741af10907624ed26c,
+        type: 3}
+      propertyPath: firstthing
+      value: 
+      objectReference: {fileID: 918177544}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e146bb2fee695d741af10907624ed26c, type: 3}
+--- !u!1 &429651674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4652195397163516056, guid: e146bb2fee695d741af10907624ed26c,
+    type: 3}
+  m_PrefabInstance: {fileID: 429651673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &429651675 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 986367519899632707, guid: e146bb2fee695d741af10907624ed26c,
+    type: 3}
+  m_PrefabInstance: {fileID: 429651673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &488486218
 GameObject:
   m_ObjectHideFlags: 0
@@ -2746,7 +2871,7 @@ PrefabInstance:
         type: 3}
       propertyPath: firstthing
       value: 
-      objectReference: {fileID: 1846475035}
+      objectReference: {fileID: 905531471}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e146bb2fee695d741af10907624ed26c, type: 3}
 --- !u!1 &1331047719 stripped
@@ -3159,6 +3284,8 @@ GameObject:
   - component: {fileID: 1779111638}
   - component: {fileID: 1779111637}
   - component: {fileID: 1779111642}
+  - component: {fileID: 1779111643}
+  - component: {fileID: 1779111644}
   m_Layer: 6
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -3458,10 +3585,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1779111643}
+        m_TargetAssemblyTypeName: KakachicoHand, Assembly-CSharp
+        m_MethodName: SetIsHoldingSomething
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1779111643}
+        m_TargetAssemblyTypeName: KakachicoHand, Assembly-CSharp
+        m_MethodName: SetIsHoldingSomething
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_OnHoverEntered:
@@ -3759,12 +3910,43 @@ MonoBehaviour:
   m_Controllers:
   - {fileID: 1779111641}
   m_DeadZone: 0.75
---- !u!1 &1846475035 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6809721744968573715, guid: 6e84242ab3adce444abaea5811e68c73,
-    type: 3}
-  m_PrefabInstance: {fileID: 6809721743189744136}
+--- !u!114 &1779111643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779111635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55316a2cfbb47349848b355527849ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  webthread: {fileID: 1331047719}
+  webtarget: {fileID: 0}
+  websling: {fileID: 1032982988236784937, guid: e9b8723363ba84949a8de8f9e3a86373,
+    type: 3}
+  kakachico: {fileID: 1165312108}
+  webShootSpawn: {fileID: 905531472}
+  isPunchReady: 0
+  inputActionReference_Activate: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  inputActionReference_Select: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  isHoldingSomething: 0
+--- !u!65 &1779111644
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779111635}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.051126994, y: 0.051251624, z: 0.15230738}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1925797366
 GameObject:
   m_ObjectHideFlags: 0
@@ -3832,6 +4014,7 @@ Transform:
   - {fileID: 1666633228}
   - {fileID: 533166791}
   - {fileID: 1331047721}
+  - {fileID: 429651675}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4167,6 +4350,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WebWhipper
       objectReference: {fileID: 0}
+    - target: {fileID: 6809721744696713490, guid: 6e84242ab3adce444abaea5811e68c73,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6809721744696713492, guid: 6e84242ab3adce444abaea5811e68c73,
         type: 3}
       propertyPath: m_RootOrder
@@ -4232,11 +4420,27 @@ PrefabInstance:
       propertyPath: webthread
       value: 
       objectReference: {fileID: 1331047719}
+    - target: {fileID: 6809721744696713493, guid: 6e84242ab3adce444abaea5811e68c73,
+        type: 3}
+      propertyPath: inputActionReference_ShootWeb
+      value: 
+      objectReference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}
     - target: {fileID: 6809721744696713494, guid: 6e84242ab3adce444abaea5811e68c73,
         type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1149014157}
+    - target: {fileID: 6809721744696713494, guid: 6e84242ab3adce444abaea5811e68c73,
+        type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809721744696713494, guid: 6e84242ab3adce444abaea5811e68c73,
+        type: 3}
+      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e84242ab3adce444abaea5811e68c73, type: 3}
 --- !u!1001 &7085515317872565191
