@@ -46,11 +46,8 @@ public class CharacterControllerMovement : MonoBehaviour
 
         if (Input.GetButton("Jump") && GetComponent<CharacterController>().isGrounded)
         {
-            GetComponent<EntityScript>().moveDirectiony.y += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
+            //GetComponent<EntityScript>().moveDirectiony.y += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
         }
-
-
-
 
         GetComponent<CharacterController>().Move(moveDirectionx);
 
