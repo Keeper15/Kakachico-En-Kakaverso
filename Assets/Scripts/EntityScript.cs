@@ -89,7 +89,7 @@ public class EntityScript : MonoBehaviour
 
         if (HP <= 0)
         {
-            Die();
+            animator.SetTrigger("Die");
         }
     }
 
