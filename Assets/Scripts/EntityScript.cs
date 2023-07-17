@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.AI;
 
 public class EntityScript : MonoBehaviour
 {
@@ -16,8 +15,10 @@ public class EntityScript : MonoBehaviour
     [SerializeField] private bool usesHealthBar = false;
 
     [SerializeField] private float gravityScale = 1.0f;
-    private float gravity = -9.8f;
-    private NavMeshAgent entityAgent;
+    private static float gravity = 9.8f;
+    [SerializeField] private float movementSpeed = 3.5f;
+    private CharacterController controller;
+    private bool isMovementAllowed;
     [SerializeField] private float moveDirectionY;
     [SerializeField] private Transform targetTransform;
     public bool grounded = false;
@@ -25,25 +26,25 @@ public class EntityScript : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] private bool isRotatingViaScript = false;
 
-    [SerializeField] private Animator animator;
+    private Animator animator;
 
     private void Awake()
     {
-        entityAgent = GetComponent<NavMeshAgent>();
+        controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        targetTransform = PlayerManager.Instance.GetPlayerRef().transform;
     }
 
     private void Start()
     {
         UpdateHPBar();
-        entityAgent.isStopped = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Walk();
         RotateViaScript();
+        Walk();
         HandleHitstun();
 
         if(debugtest)
@@ -54,18 +55,25 @@ public class EntityScript : MonoBehaviour
 
     private void Walk()
     {
-        if (entityAgent.isStopped || !animator.GetBool("isAggroed"))
+        Vector3 characterMovement = Vector3.zero;
+        if (isMovementAllowed && animator.GetBool("isAggroed"))
         {
-            return;
+            characterMovement += transform.forward * movementSpeed;
         }
-        entityAgent.SetDestination(targetTransform.position);
+        
+        if (!controller.isGrounded)
+        {
+            characterMovement += Vector3.down * (gravity * gravityScale);
+        }
+
+        controller.Move(characterMovement * Time.deltaTime);
     }
 
     private void RotateViaScript()
     {
         if (!isRotatingViaScript) return;
 
-        Vector3 targetPositionWithoutY = new Vector3(targetTransform.position.x, transform.rotation.y, targetTransform.position.z);
+        Vector3 targetPositionWithoutY = new Vector3(targetTransform.position.x, transform.position.y, targetTransform.position.z);
         Quaternion targetRotation = Quaternion.LookRotation(targetPositionWithoutY - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
@@ -100,24 +108,22 @@ public class EntityScript : MonoBehaviour
         }
     }
 
-    public void SetIsStoppedToTrue()
+    public void AllowMovement()
     {
-        entityAgent.isStopped = true;
+        isMovementAllowed = true;
     }
 
-    public void SetIsStoppedToFalse()
+    public void DisallowMovement()
     {
-        entityAgent.isStopped = false;
+        isMovementAllowed = false;
     }
 
     public void SetIsRotatingViaScriptToTrue()
     {
-        entityAgent.updateRotation = false;
         isRotatingViaScript = true;
     }
     public void SetIsRotatingViaScriptToFalse()
     {
-        entityAgent.updateRotation = true;
         isRotatingViaScript = false;
     }
 

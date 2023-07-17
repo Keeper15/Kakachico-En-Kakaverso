@@ -52,6 +52,7 @@ public class EnemyRanged : MonoBehaviour
        
     }
 
+    //MIGHT REMOVE
     private void Aim()
     {
         if (!isAiming) return;

@@ -521,21 +521,21 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: SetIsStoppedToTrue
+    functionName: DisallowMovement
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.016666668
-    functionName: SetIsRotatingViaScriptToTrue
+    functionName: SetIsRotatingViaScriptToFalse
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.96666664
-    functionName: SetIsRotatingViaScriptToFalse
+  - time: 0.5
+    functionName: SetIsRotatingViaScriptToTrue
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

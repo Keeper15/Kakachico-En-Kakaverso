@@ -1748,6 +1748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a139b71090d2049bce9bf77f83f559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPersist: 0
   playerRef: {fileID: 1165312108}
   score: 0
 --- !u!4 &1553992298
@@ -2847,11 +2848,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7298336795142370121, guid: d8f56f2625f8b0d4cb633d05ffa11918,
-        type: 3}
-      propertyPath: targetTransform
-      value: 
-      objectReference: {fileID: 1165312111}
     - target: {fileID: 7298336795142370127, guid: d8f56f2625f8b0d4cb633d05ffa11918,
         type: 3}
       propertyPath: m_RootOrder
@@ -2938,7 +2934,7 @@ PrefabInstance:
     - target: {fileID: 5624601488807446342, guid: d0b53b071ff1a1941baaa8bd43b49268,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5624601488807446362, guid: d0b53b071ff1a1941baaa8bd43b49268,
         type: 3}
@@ -2995,10 +2991,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5624601488807446364, guid: d0b53b071ff1a1941baaa8bd43b49268,
-        type: 3}
-      propertyPath: targetTransform
-      value: 
-      objectReference: {fileID: 1165312111}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0b53b071ff1a1941baaa8bd43b49268, type: 3}
