@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class GameplayManager : Manager<GameplayManager>
 {
-    [SerializeField] private int currentEnemyCount;
+    [SerializeField] private int currentEnemyCount = 0;
 
     [SerializeField] private GameObject rooftopZonePrefab;
     [SerializeField] private RooftopZone currentRooftopZone;
-    [SerializeField] private RooftopZone newRooftopZone;
-
-    public void DeleteOldRooftopZone()
-    {
-
-    }
 
     public void SpawnNewRooftopZone()
     {
-        
+        GameObject.Instantiate(rooftopZonePrefab, currentRooftopZone.GetNewBuildingSpawnPoint(), currentRooftopZone.transform.rotation);
+    }
+
+    public void SwitchCurrentZone(RooftopZone newRooftopZone)
+    {
+        if (currentRooftopZone != null) Destroy(currentRooftopZone.gameObject);
+        currentRooftopZone = newRooftopZone;
     }
 
     public void AddToCurrentEnemyCount(int count)
@@ -33,5 +33,10 @@ public class GameplayManager : Manager<GameplayManager>
         {
             SpawnNewRooftopZone();
         }
+    }
+
+    public void TeleportPlayerToSafety()
+    {
+        PlayerManager.Instance.GetPlayerRef().transform.position = currentRooftopZone.GetPlayerRespawnPoint();
     }
 }

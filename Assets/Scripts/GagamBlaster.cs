@@ -7,6 +7,7 @@ public class GagamBlaster : MonoBehaviour
     [SerializeField] private Transform bulletSpawn;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private Animator gunAnimator;
+    [SerializeField] private EnemyRanged enemyRanged;
 
     public void ShootBullet()
     {
@@ -19,13 +20,18 @@ public class GagamBlaster : MonoBehaviour
 
         if (Physics.Raycast(bulletSpawn.position, bulletSpawn.forward, out hit, Mathf.Infinity, layerMask))
         {
-            if (hit.transform.gameObject.tag == "Enemy")
+            if (hit.transform.GetComponent<EntityScript>() != null)
             {
                 Transform enemyHitRef = hit.transform;
 
                 enemyHitRef.GetComponent<EntityScript>().TakeDamage(10f);
-                enemyHitRef.GetComponent<CharacterImpactStuff>().AddImpact(transform.position - enemyHitRef.transform.position, -5f);
+                //enemyHitRef.GetComponent<CharacterImpactStuff>().AddImpact(transform.position - enemyHitRef.transform.position, -5f);
             }
         }
+    }
+
+    public void HandleStolenGunFromEnemy()
+    {
+        enemyRanged.SetHasGun(false);
     }
 }

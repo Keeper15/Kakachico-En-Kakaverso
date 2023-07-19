@@ -96,7 +96,7 @@ public class EntityScript : MonoBehaviour
     private void UpdateHPBar()
     {
         if (!usesHealthBar) return;
-        healthBar.transform.localScale = new Vector3(Mathf.Lerp(0f, 2f, HP / 100f), 0.1f, 0.05f);
+        healthBar.transform.localScale = new Vector3(Mathf.Lerp(0f, 1f, HP / 100f), 0.1f, 0.05f);
     }
 
     private void HandleHitstun()
@@ -129,11 +129,17 @@ public class EntityScript : MonoBehaviour
 
     public void Die()
     {
+        GameplayManager.Instance.DecrementCurrentEnemyCount();
         Destroy(this.gameObject);
     }
 
     public Transform GetTargetTransform()
     {
         return targetTransform;
+    }
+
+    public void TriggerDeath()
+    {
+        animator.SetTrigger("Die");
     }
 }

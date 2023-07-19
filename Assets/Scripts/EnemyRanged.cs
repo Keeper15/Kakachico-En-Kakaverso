@@ -12,6 +12,7 @@ public class EnemyRanged : MonoBehaviour
     [SerializeField] private Transform shootTransform;
     [SerializeField] private Vector3 aimPosition;
     [SerializeField] private bool isAiming;
+    [SerializeField] private bool hasGun = true;
 
     private void Awake()
     {
@@ -66,6 +67,8 @@ public class EnemyRanged : MonoBehaviour
 
     public void ShootBullet()
     {
+        if (!hasGun) return;
+
         RaycastHit hit;
         Vector3 direction = aimPosition - shootTransform.position;
         if (Physics.Raycast(shootTransform.position, direction, out hit, Mathf.Infinity, attackLayerMask))
@@ -83,5 +86,10 @@ public class EnemyRanged : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackTriggerDistance);
+    }
+
+    public void SetHasGun(bool val)
+    {
+        hasGun = val;
     }
 }

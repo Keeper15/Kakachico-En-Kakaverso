@@ -148,7 +148,7 @@ MonoBehaviour:
   targetTransform: {fileID: 0}
   grounded: 0
   rotationSpeed: 0
-  isRotatingViaScript: 0
+  isRotatingViaScript: 1
 --- !u!114 &1738951557383677655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 1738951557540742930}
   - component: {fileID: 1738951557540742932}
   - component: {fileID: 1738951557540742933}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

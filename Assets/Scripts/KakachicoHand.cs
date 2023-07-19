@@ -136,10 +136,10 @@ public class KakachicoHand : MonoBehaviour
     {
         if (isPunchReady && !isHoldingSomething)
         {
-            if (other.tag == "Enemy")
+            if (other.transform.GetComponent<EntityScript>() != null)
             {
                 other.transform.GetComponent<EntityScript>().TakeDamage(12f);
-                other.transform.GetComponent<CharacterImpactStuff>().AddImpact(transform.position - other.transform.position, -10f);
+                //other.transform.GetComponent<CharacterImpactStuff>().AddImpact(transform.position - other.transform.position, -10f);
             }
         }
     }

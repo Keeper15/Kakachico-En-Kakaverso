@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class RooftopZone : MonoBehaviour
 {
-    private Vector3 newBuildingSpawnPoint;
+    [SerializeField] private Vector3 newBuildingSpawnPoint;
+    [SerializeField] private Vector3 playerRespawnPoint;
     [SerializeField] private Transform enemyContainer;
     [SerializeField] private Transform[] enemySpawnPoints;
     [SerializeField] private int enemyCount;
+    private bool hasSpawned;
 
     [SerializeField] private GameObject enemyMeleePrefab;
     [SerializeField] private GameObject enemyRangedPrefab;
@@ -19,6 +21,10 @@ public class RooftopZone : MonoBehaviour
 
     private void SpawnEnemies()
     {
+        if (hasSpawned) return;
+
+        hasSpawned = true;
+
         //Spawn an enemy in each spawn point
         foreach (Transform spawnPoint in enemySpawnPoints)
         {
@@ -36,20 +42,37 @@ public class RooftopZone : MonoBehaviour
 
         //Add to GameplayManager the current enemy count
         GameplayManager.Instance.AddToCurrentEnemyCount(enemyCount);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        SpawnEnemies();
+        GameplayManager.Instance.SwitchCurrentZone(this);
     }
 
     public Vector3 GetNewBuildingSpawnPoint()
     {
-        return newBuildingSpawnPoint;
+        return transform.position + newBuildingSpawnPoint;
     }
 
     public int GetEnemyCount()
     {
         return enemyCount;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        { 
+            SpawnEnemies(); 
+        }
+    }
+
+    public Vector3 GetPlayerRespawnPoint()
+    {
+        return transform.position + playerRespawnPoint;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(GetNewBuildingSpawnPoint(), 2f);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(GetPlayerRespawnPoint(), 0.75f);
     }
 }
