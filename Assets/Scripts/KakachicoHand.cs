@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class KakachicoHand : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class KakachicoHand : MonoBehaviour
     [SerializeField] InputActionReference inputActionReference_Activate;
     [SerializeField] InputActionReference inputActionReference_Select;
     [SerializeField] private bool isHoldingSomething = false;
+
+    [SerializeField] private ActionBasedController controller;
+    [SerializeField] private Animator handAnimator;
 
     private void OnEnable()
     {
@@ -36,8 +40,15 @@ public class KakachicoHand : MonoBehaviour
         inputActionReference_Select.action.canceled -= Deselect;
     }
 
+    private void Start()
+    {
+        
+    }
+
     private void Update()
     {
+        if (handAnimator == null)
+            handAnimator = controller.model.GetComponent<Animator>();
         ReelWeb();
     }
 
@@ -87,6 +98,8 @@ public class KakachicoHand : MonoBehaviour
             webtarget = webshot;
         }
 
+        handAnimator.SetBool("isShootingWeb", true);
+
         webthread.SetActive(true);
         webthread.GetComponent<webthread>().secondthing = webtarget;
     }
@@ -99,9 +112,11 @@ public class KakachicoHand : MonoBehaviour
         if (webtarget.GetComponent<WebSling>().landed)
         {
             kakachico.GetComponent<Rigidbody>().AddForce((kakachico.transform.position - webtarget.transform.position) * -2f, ForceMode.Impulse);
-            kakachico.GetComponent<Rigidbody>().AddForce(kakachico.transform.forward * 4f, ForceMode.Impulse);
-            kakachico.GetComponent<Rigidbody>().AddForce(kakachico.transform.up * 2f, ForceMode.Impulse);
+            kakachico.GetComponent<Rigidbody>().AddForce(kakachico.transform.forward * 1f, ForceMode.Impulse);
+            kakachico.GetComponent<Rigidbody>().AddForce(kakachico.transform.up * 10f, ForceMode.Impulse);
         }
+
+        handAnimator.SetBool("isShootingWeb", false);
 
         webthread.SetActive(false);
         Destroy(webtarget);
@@ -125,11 +140,13 @@ public class KakachicoHand : MonoBehaviour
     private void ReadyPunch()
     {
         isPunchReady = true;
+        handAnimator.SetBool("isPunching", true);
     }
 
     private void UnreadyPunch()
     {
         isPunchReady = false;
+        handAnimator.SetBool("isPunching", false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -147,5 +164,6 @@ public class KakachicoHand : MonoBehaviour
     public void SetIsHoldingSomething(bool val)
     {
         isHoldingSomething = val;
+        handAnimator.SetBool("isHoldingGun", val);
     }
 }

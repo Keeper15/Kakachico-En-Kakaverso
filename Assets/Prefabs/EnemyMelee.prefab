@@ -2569,5 +2569,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityScript: {fileID: 0}
   animator: {fileID: 0}
-  damage: 10
+  damage: 5
   attackTriggerDistance: 0.9

@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float currentHP;
     [SerializeField] private float maxHP = 100f;
+
+    [SerializeField] private Image healthBar;
 
     public UnityEvent onDamaged;
     public UnityEvent onDeath;
@@ -28,5 +31,10 @@ public class Player : MonoBehaviour
         {
             onDamaged.Invoke();
         }
+    }
+
+    public void UpdateHealthBar()
+    {
+        healthBar.fillAmount = currentHP / maxHP;
     }
 }
