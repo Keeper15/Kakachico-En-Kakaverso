@@ -32,9 +32,9 @@ public class WebSling : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Platform" && startupIntangibility <= 0)
+        if (other.tag == "Platform" && startupIntangibility <= 0)
         {
 
             GetComponent<Rigidbody>().velocity = Vector3.zero;

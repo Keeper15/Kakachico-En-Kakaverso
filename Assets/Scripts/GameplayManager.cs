@@ -6,12 +6,13 @@ public class GameplayManager : Manager<GameplayManager>
 {
     [SerializeField] private int currentEnemyCount = 0;
 
-    [SerializeField] private GameObject rooftopZonePrefab;
+    [SerializeField] private GameObject[] rooftopZonePrefabs;
     [SerializeField] private RooftopZone currentRooftopZone;
 
     public void SpawnNewRooftopZone()
     {
-        GameObject.Instantiate(rooftopZonePrefab, currentRooftopZone.GetNewBuildingSpawnPoint(), currentRooftopZone.transform.rotation);
+        int i = Random.Range(0, rooftopZonePrefabs.Length);
+        GameObject.Instantiate(rooftopZonePrefabs[i], currentRooftopZone.GetNewBuildingSpawnPoint(), currentRooftopZone.transform.rotation);
     }
 
     public void SwitchCurrentZone(RooftopZone newRooftopZone)
