@@ -22,6 +22,10 @@ public class GameplayManager : Manager<GameplayManager>
 
     public void AddToCurrentEnemyCount(int count)
     {
+        if (currentEnemyCount < 0)
+        {
+            currentEnemyCount = 0;
+        }
         currentEnemyCount += count;
     }
 

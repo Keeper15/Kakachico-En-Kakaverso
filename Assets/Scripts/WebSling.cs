@@ -7,9 +7,11 @@ public class WebSling : MonoBehaviour
     [SerializeField]
     private GameObject webshot;
 
-
     [SerializeField]
     private GameObject webspread;
+
+    [SerializeField]
+    private float startupIntangibility;
 
     public bool landed = false;
 
@@ -23,13 +25,16 @@ public class WebSling : MonoBehaviour
     void Update()
     {
 
-
+        if (startupIntangibility > 0)
+        {
+            startupIntangibility -= Time.deltaTime;
+        }
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Platform")
+        if(other.tag == "Platform" && startupIntangibility <= 0)
         {
 
             GetComponent<Rigidbody>().velocity = Vector3.zero;
