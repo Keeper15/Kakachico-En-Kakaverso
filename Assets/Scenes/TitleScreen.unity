@@ -1038,6 +1038,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 557130140560003945, guid: c38ee786c8722304e971819a591450c7,
         type: 3}
+      propertyPath: m_RaycastMask.m_Bits
+      value: 1983
+      objectReference: {fileID: 0}
+    - target: {fileID: 557130140560003945, guid: c38ee786c8722304e971819a591450c7,
+        type: 3}
       propertyPath: m_HoverExited.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -1050,6 +1055,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 557130140665929108, guid: c38ee786c8722304e971819a591450c7,
+        type: 3}
+      propertyPath: m_RaycastMask.m_Bits
+      value: 1983
       objectReference: {fileID: 0}
     - target: {fileID: 557130140665929108, guid: c38ee786c8722304e971819a591450c7,
         type: 3}
