@@ -2350,17 +2350,17 @@ PrefabInstance:
     - target: {fileID: 2730703872637143162, guid: aa60d9c7c44c5224dbb9af582f40483a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.08
+      value: 0.09999999
       objectReference: {fileID: 0}
     - target: {fileID: 2730703872637143162, guid: aa60d9c7c44c5224dbb9af582f40483a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.08
+      value: 0.09999999
       objectReference: {fileID: 0}
     - target: {fileID: 2730703872637143162, guid: aa60d9c7c44c5224dbb9af582f40483a,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.08
+      value: 0.09999999
       objectReference: {fileID: 0}
     - target: {fileID: 2730703872637143162, guid: aa60d9c7c44c5224dbb9af582f40483a,
         type: 3}
@@ -2415,12 +2415,22 @@ PrefabInstance:
     - target: {fileID: 2730703872637143162, guid: aa60d9c7c44c5224dbb9af582f40483a,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2734314566557625868, guid: aa60d9c7c44c5224dbb9af582f40483a,
         type: 3}
       propertyPath: m_Name
       value: GagamBlaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800526902695752187, guid: aa60d9c7c44c5224dbb9af582f40483a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332769547434116227, guid: aa60d9c7c44c5224dbb9af582f40483a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa60d9c7c44c5224dbb9af582f40483a, type: 3}

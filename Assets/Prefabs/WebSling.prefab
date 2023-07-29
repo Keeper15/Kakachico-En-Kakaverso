@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9141711787717923910}
   - component: {fileID: 4009992894140740786}
   - component: {fileID: 5086007736726848511}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WebSling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   webshot: {fileID: 553326938899078145}
   webspread: {fileID: 5829178246632527745}
-  startupIntangibility: 0.75
+  startupIntangibility: 0.15
   landed: 0
 --- !u!1001 &2002072681242981173
 PrefabInstance:
@@ -78,6 +78,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WebSpread
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417175885263873204, guid: 6eb72245a533a5444ab102d39dfa0e09,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5417175885263873204, guid: 6eb72245a533a5444ab102d39dfa0e09,
         type: 3}
@@ -164,6 +169,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WebShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524477022395700570, guid: e76549abbf732c24997bf05b44af2dda,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6015773783144629911, guid: e76549abbf732c24997bf05b44af2dda,
         type: 3}
